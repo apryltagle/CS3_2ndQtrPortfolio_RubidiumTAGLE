@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <p><a href="link">2nd Qtr 1st Graded Exercise</a></p>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://freepngimg.com/thumb/categories/2019.png" type="image/x-icon">
+
+    <title>Rubidium '29 Thursday Schedule</title>
+
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url('shutterstock_15465757-scaled.webp');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .center-table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            background-color: rgba(86, 80, 80, 0.1);
+            backdrop-filter: blur(7px);
+            -webkit-backdrop-filter: blur(5px);
+            height: 500px;
+            width: 50%;
+        }
+
+        th, td {
+            padding: 10px;
+        }
+
+        .wow {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+        }
+
+        .buttons {
+            bottom: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .buttons p {
+            background: rgba(47, 45, 45, 0.6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .buttons p:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .content {
+            margin-top: 20px;
+        }
+
+        #image, #vid {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="wow">Thursday</h1>
+        <p>Apryl Emmanoelle P. Tagle</p>
+    </header>
+
+
+
+    <table border="1" class="center-table">
+        <tr>
+            <th>Time</th>
+            <th>Subject</th>
+            <th>Teacher</th>
+        </tr>
+
+        <tr>
+            <td>7:20 - 8:15</td>
+            <td>Statistics</td>
+            <td>GUSTILLO, Darlene Anne P.</td>
+        </tr>
+
+        <tr>
+            <td>8:15 - 9:00</td>
+            <td>Study Period</td>
+        </tr>
+
+        <tr>
+            <td>9:10 - 9:55</td>
+            <td rowspan="2">Biology</td>
+            <td rowspan="2">PINLAC, Maria Elena D.</td>
+        </tr>
+
+        <tr>
+            <td>9:55 - 10:40</td>
+        </tr>
+
+        <tr>
+            <td>10:40 - 11:25</td>
+            <td>Filipino</td>
+            <td>BARQUILLA, Ester Camille B</td>
+        </tr>
+
+        <tr>
+            <td>11:25 - 12:10</td>
+            <td>Valed</td>
+            <td>ANDA, Floriedes A.</td>
+        </tr>
+
+        <tr>
+            <td>12:10 - 1:05</td>
+            <td>Lunch</td>
+        </tr>
+
+        <tr>
+            <td>1:05 - 1:50</td>
+            <td>Chemistry</td>
+            <td>VILLAR, Katrina G.</td>
+        </tr>
+
+        <tr>
+            <td>1:50 - 2:35</td>
+            <td>Study Period</td>
+        </tr>
+
+        <tr>
+            <td>2:45 - 3:30</td>
+            <td rowspan="2">PE</td>
+            <td rowspan="2">ALVAREZ, Jade Mark B.</td>
+        </tr>
+
+        <tr>
+            <td>3:30 - 4:15</td>
+        </tr>
+
+
+    </table>
+
+    
+
+    <div class="content">
+        <div id="image">
+        <img src="CS3_1stQtrPortfolio/public-2/jojos_bizarre_adventure_stardust_crusaders-35-d_arby-gambler-art-drama-emotion-stress-defeat.jpg" alt="D'Arby" width="500" height="300">
+        </div>
+        <div id="vid">
+            <iframe width="500" height="300" src="https://www.youtube.com/embed/P-3GOo_nWoc"></iframe>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <p onclick="showImg()">Show Image</p>
+        <p onclick="showVid()">Show Video</p>
+    </div>
+
+    <script>
+        function showImg(){
+            document.getElementById("image").style.display = "block";
+            document.getElementById("vid").style.display = "none";
+        }
+
+        function showVid(){
+            document.getElementById("vid").style.display = "block";
+            document.getElementById("image").style.display = "none";
+        }
+    </script>
+
+    <nav>
+
+    </nav>
+
+      <footer>
+
+    <p>&copy; 2025 Apryl Emmanoelle P. Tagle </p>
+
+  </footer>
+
+
+    <!-- W3Schools.com. (n.d.). https://www.w3schools.com/CSS/ 
+     W3Schools.com. (n.d.-b). https://www.w3schools.com/tags/att_td_rowspan.asp
+     Wiki, C. T. J. B. (n.d.). Diego Brando (Scary Monsters). JoJo’s Bizarre Wiki. https://jojo.fandom.com/wiki/Diego_Brando_(Scary_Monsters)
+    -->
+</body>
+</html>
