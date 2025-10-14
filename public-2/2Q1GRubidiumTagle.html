@@ -74,12 +74,24 @@
         #image, #vid {
             display: none;
         }
+
+        #rsn {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(3px);
+        background-color: rgba(60, 58, 58, 0.2);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 500px;
+        padding: 50px 50px;
+        margin: 10px;
+        border: 4px;
+        border-radius: 20px;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1 class="wow">Thursday</h1>
+        <h1 class="wow">Rubidium 2029's Thursday Sched!</h1>
         <p>Apryl Emmanoelle P. Tagle</p>
     </header>
 
@@ -163,22 +175,41 @@
         <div id="vid">
             <iframe width="500" height="300" src="https://www.youtube.com/embed/P-3GOo_nWoc"></iframe>
         </div>
+        <div id="rsn">
+
+            <p>
+            I chose this picture because we have statistics THEN double period biology! Imagine getting jabbed two times in a row in broad day light, that’s what it feels like to have two information-loaded subjects first thing in the morning >:(. It’s okay, I get to see my beautiful, gorgeous, funny friends !
+                </p>
+
+            <p>
+            Joseph Joestar’s video compilation represents my emotion on every subject in the schedule! You will literally say “oh my God” every time a new information is presented on the screen. Also i love Joseph Joestar so much!
+                </p>
+        </div>
     </div>
 
     <div class="buttons">
         <p onclick="showImg()">Show Image</p>
         <p onclick="showVid()">Show Video</p>
+        <p onclick="showReason()"> Show Reasoning</p>
     </div>
 
     <script>
         function showImg(){
             document.getElementById("image").style.display = "block";
             document.getElementById("vid").style.display = "none";
+            document.getElementById("rsn").style.display = "none";
         }
 
         function showVid(){
             document.getElementById("vid").style.display = "block";
             document.getElementById("image").style.display = "none";
+            document.getElementById("rsn").style.display = "none";
+        }
+    
+        function showReason(){
+            document.getElementById("image").style.display = "none";
+            document.getElementById("vid").style.display = "none";
+            document.getElementById("rsn").style.display = "block";
         }
     </script>
 
@@ -188,7 +219,7 @@
 
       <footer>
 
-    <p>&copy; Apryl Emmanoelle P. Tagle 2025</p>
+    <p>&copy; 2025 Apryl Emmanoelle P. Tagle </p>
 
   </footer>
 
