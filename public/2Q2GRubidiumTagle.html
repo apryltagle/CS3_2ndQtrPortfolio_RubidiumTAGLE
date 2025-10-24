@@ -7,44 +7,34 @@
     <meta name="description" content="Rubidium 2029's Thursday Schedule">
     <meta name="author" content="Apryl Emmanoelle P. Tagle">
 
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link rel="icon" href="https://freepngimg.com/thumb/categories/2019.png" type="image/x-icon">
-
+    <link rel="stylesheet" href="../shared/style.css">
 
     <style>
-        body {
-            font-family: 'Orbitron', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-image: url('shutterstock_15465757-scaled.webp');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-            background-attachment: fixed;
-            text-align: center;
-            min-height: 100vh;
-            margin: 0;
+        #image, #vid {
+            display: none;
         }
 
-        .center-table {
-            margin-top: 20px;
-            border-collapse: collapse;
+        #rsn img{
+            float: left;
+            margin: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+
+        }
+
+        #rsn {
+            background-color: rgba(60, 58, 58, 0.2);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            padding: 50px 50px;
+            margin: 10px;
+            border: 4px;
+            display: flex;
+            align-items: center;
             border-radius: 20px;
-            overflow: hidden;
-            background-color: rgba(86, 80, 80, 0.1);
-            backdrop-filter: blur(7px);
-            -webkit-backdrop-filter: blur(5px);
-            height: 500px;
-            width: 50%;
-            table-layout: fixed;
-        }
-
-        th, td {
-            padding: 10px;
         }
 
         .wow {
@@ -60,6 +50,7 @@
             width: 100%;
         }
 
+
         .buttons p {
             background: rgba(47, 45, 45, 0.6);
             color: white;
@@ -70,54 +61,23 @@
         }
 
         .buttons p:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(53, 52, 52, 0.2);
         }
 
         .content {
             margin-top: 20px;
-        }
+            display: flex;
+            padding: 10px;
+            gap: 10px;
+            flex-direction: column;
+            align-items: center;
+    }
 
-        #image, #vid {
-            display: none;
-        }
+       header, footer {
+            width: 100%;
+            text-align: center;
+    }     
 
-        #rsn {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(3px);
-        background-color: rgba(60, 58, 58, 0.2);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 500px;
-        padding: 50px 50px;
-        margin: 10px;
-        border: 4px;
-        border-radius: 20px;
-        }
-
-        nav{
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(3px);
-        background-color: rgba(60, 58, 58, 0.2);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 500px;
-        padding: 30px;
-        margin:  auto;
-        display: flex;
-        border: 4px;
-        border-radius: 20px; 
-        justify-content: center;
-        gap: 10px;
-
-        }
-
-        nav a {
-        color: white; 
-        text-decoration: none; 
-        background: rgba(47, 45, 45, 0.6); 
-        padding: 10px 20px;
-        border-radius: 10px;
-        transition: background 0.3s;
-        font-family: 'Orbitron', sans-serif;
-}
     </style>
 </head>
 <body>
