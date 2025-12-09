@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter Game</title>
+    <style>
+        body{
+            font-family: Helvetica, sans-serif;
+            text-align : center;
+            margin-top: 80px;
+        }
+
+        #letterDisplay {
+            font-size: 80px;
+        }
+    </style>
+</head>
+<body>
+
+  <h1>Press the correct key!</h1>
+
+  <h2>Score: <span id="score">0</span></h2>
+
+  <h2 id="letterDisplay"></h2>
+
+  <h2 id="result"></h2>
+
+  <script>
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const letterDisplay = document.getElementById("letterDisplay");
+    const result = document.getElementById("result");
+    const scoreDisplay = document.getElementById("score");
+    
+    let score = 0;
+
+    function newLetter() {
+      const randomIndex = Math.floor(Math.random() * letters.length);
+      const randomLetter = letters[randomIndex];
+      letterDisplay.textContent = randomLetter;
+      result.textContent = "";
+    }
+
+    newLetter();
+
+    document.addEventListener("keydown", (event) => {
+      const userKey = event.key.toUpperCase();
+      const targetLetter = letterDisplay.textContent;
+
+      if (!letters.includes(userKey)) return;
+
+      if (userKey === targetLetter) {
+        score++;
+        scoreDisplay.textContent = score;
+        result.textContent = "Correct!";
+        result.style.color = "green";
+        newLetter();
+      } else {
+        result.textContent = "WRONG!!!!!!";
+        result.style.color = "red";
+      }
+    });
+  </script>
+  <!--OpenAI. (2025, December 9). ChatGPT (5.1) [Large language model]. https://chat.openai.com/-->
+</body>
+</html>

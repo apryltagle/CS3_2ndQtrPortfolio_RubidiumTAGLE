@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Anywhere!</title>
+
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+    }
+  </style>
+
+</head>
+<body>
+  <h1>Click anywhere!</h1>
+
+  <script>
+    document.body.onclick = changeColor;
+
+    function changeColor() {
+      const r = Math.floor(Math.random() * 256);
+      const g = Math.floor(Math.random() * 256);
+      const b = Math.floor(Math.random() * 256);
+
+      document.body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+    }
+  </script>
+</body>
+</html>

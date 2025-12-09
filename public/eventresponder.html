@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Own Event Responder</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      background: #f4f4f4;
+    }
+
+    #changeText {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #7d87ad;
+      color: white;
+    }
+
+    #changeText:hover {
+      opacity: 0.9;
+    }
+
+    #changeText:active {
+        background: #7480b2;;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background: #e3cfcf;
+      border-radius: 15px;
+      transition: transform 0.4s ease;
+    }
+
+    .box:hover {
+      transform: rotate(45deg);
+    }
+
+    #keyMessage {
+      font-size: 18px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="changeText">Click me</button>
+
+  <div class="box"></div>
+
+  <div id="keyMessage"></div>
+
+  <script>
+    const changeTextBtn = document.getElementById('changeText');
+    let clicked = false;
+
+    changeTextBtn.addEventListener('click', () => {
+      clicked = !clicked;
+      changeTextBtn.textContent = clicked ? 'That hurts!' : 'Click me';
+    });
+
+    const keyMessage = document.getElementById('keyMessage');
+
+    document.addEventListener('keydown', (event) => {
+      keyMessage.style.display = 'block';
+      keyMessage.textContent = `You pressed your keyboard wow!`;
+    });
+  </script>
+  <!--OpenAI. (2025, December 9). ChatGPT (5.1) [Large language model]. https://chat.openai.com/-->
+</body>
+</html>
