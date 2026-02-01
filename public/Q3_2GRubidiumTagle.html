@@ -7,133 +7,115 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">  
 
   <style>
-    
-    body{
-        font-family: 'Orbitron', 'sans-serif';
+      body{
+        font-family: 'Orbitron', sans-serif;
         margin: 30px;
         display: flex;
         justify-content: center;
-        align-items: center;
-    }
-
-    form{
-        max-width: 400px;
-    }
-
-    fieldset{
-        margin-bottom: 14px;
-        padding: 14px;
-    }
-
-    label{
-        display: block;
-        margin: 4px 0;
-    }
-
-    input,select,textarea{ 
+      }
+      form{ max-width: 400px; }
+      fieldset{ margin-bottom: 14px; padding: 14px; }
+      label{ display: block; margin: 4px 0; }
+      input,select,textarea{
         width: 160px;
         height: 25px;
         box-sizing: border-box;
         padding: 6px;
-        border: 1px solid black;
-    }
+      }
+      textarea{ height: 60px; }
+      .req{ border: 2px solid red; }
+      .inline{ display: inline-block; margin-right: 12px; width: auto; }
+      .actions{ margin-top: 10px; }
+</style>
+</head>
 
-    input:focus,select:focus,textarea:focus{
-        outline: 2px solid #333;
-    }
+<body>
+<form id="appForm">
+  <fieldset>
+    <legend>Information 1-4</legend>
+    <label>Student ID <input type="number" id="studentId" required></label>
+    <label>Full Name <input type="text" id="fullName" required onblur="markIfBlank(this)"></label>
+    <label>Birthday <input type="date" id="birthday" required></label>
+    <label>Email Address <input type="email" id="email" required></label>
+  </fieldset>
 
-    .req{
-        border: 2px solid rgb(202, 55, 55);
-    }
+  <fieldset>
+    <legend>Information 5-8</legend>
+    <label>Mobile Phone <input type="text" id="mobile" required onblur="markIfBlank(this)"></label>
 
-    .inline{
-        display: inline-block;
-        margin-right: 12px;
-        width: auto;
-    }
-
-    .actions{
-        margin-top: 10px;
-    }
-  </style>
-  </head>
-
-  <body>
-  <form id="appForm" method="post" action="submit">
-    <fieldset>
-      <legend>Information 1-4</legend>
-
-      <label>Student ID
-        <input type="number" name="studentId" id="studentId" required>
-      </label>
-
-      <label>Full Name
-        <input type="text" name="fullName" id="fullName" required onblur="markIfBlank(this)">
-      </label>
-
-      <label>Birthday
-        <input type="date" name="birthday" id="birthday" required>
-      </label>
-
-      <label>Email Address
-        <input type="email" name="email" id="email" required>
-      </label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Information 5-8</legend>
-
-      <label>Mobile Phone
-        <input type="text" name="mobile" id="mobile" required onblur="markIfBlank(this)">
-      </label>
-
-      <label>Grade Level
-        <select name="gradeLevel" id="gradeLevel" required>
-          <option value="" disabled selected>Select</option>
-          <option value="G07">Grade 7</option>
-          <option value="G08">Grade 8</option>
-          <option value="G09">Grade 9</option>
-          <option value="G10">Grade 10</option>
-          <option value="G11">Grade 11</option>
-          <option value="G12">Grade 12</option>
-        </select>
-      </label>
-<label>Intern / Extern</label>
-      <label class="inline"><input type="radio" name="roleType" value="INT" required> Intern</label>
-      <label class="inline"><input type="radio" name="roleType" value="EXT" required> Extern</label>
-
-      <label>Preferred Organization / Club
-        <select name="club" id="club" required>
-          <option value="" disabled selected>Select</option>
-          <option value="MUSIC">Music Club</option>
-          <option value="VLBL">Volleyball Club</option>
-          <option value="GLEE">Glee Club</option>
-          <option value="PHOTO">Photography Club</option>
-          <option value="STEM">STEM Club</option>
-        </select>
-      </label>
-    </fieldset>
-
-    <label>Why do you want to join
-      <textarea name="reason" id="reason" required onblur="markIfBlank(this)"></textarea>
+    <label>Grade Level
+      <select id="gradeLevel" required>
+        <option value="" disabled selected>Select</option>
+        <option value="G07">Grade 7</option>
+        <option value="G08">Grade 8</option>
+        <option value="G09">Grade 9</option>
+        <option value="G10">Grade 10</option>
+        <option value="G11">Grade 11</option>
+        <option value="G12">Grade 12</option>
+      </select>
     </label>
 
-    <div class="actions">
-      <button type="submit">Submit</button>
-      <button type="reset">Reset</button>
-    </div>
-  </form>
+    <label>Intern / Extern</label>
+    <label class="inline"><input type="radio" name="roleType" value="INT" required> Intern</label>
+    <label class="inline"><input type="radio" name="roleType" value="EXT"> Extern</label>
 
-  <script>
-    const form=document.getElementById("appForm");
-    form.onsubmit=function(){return confirm("Submit this application?")};
-    form.onreset=function(){const ok=confirm("Reset the form and clear all inputs?");if(ok){setTimeout(()=>{document.querySelectorAll(".req").forEach(e=>e.classList.remove("req"))},0)}return ok};
+    <label>Preferred Club
+      <select id="club" required>
+        <option value="" disabled selected>Select</option>
+        <option value="MUSIC">Music</option>
+        <option value="VLBL">Volleyball</option>
+        <option value="GLEE">Glee</option>
+        <option value="PHOTO">Photography</option>
+        <option value="STEM">STEM</option>
+      </select>
+    </label>
+  </fieldset>
 
-    function markIfBlank(el){
-      const blank=!el.value||el.value.trim()==="";
-      if(blank) el.classList.add("req");
-      else el.classList.remove("req");
-    }
-  </script>
+  <label>Why do you want to join
+    <textarea id="reason" required onblur="markIfBlank(this)"></textarea>
+  </label>
+
+  <div class="actions">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+    <button type="button" onclick="location.href='viewSignUps.html'">
+      View Signups
+    </button>
+  </div>
+</form>
+
+<script>
+const form = document.getElementById("appForm");
+
+form.onsubmit = function (e) {
+  e.preventDefault();
+
+  if (!confirm("Submit this application?")) return;
+
+  const signUp = {
+    studentId: studentId.value,
+    fullName: fullName.value,
+    birthday: birthday.value,
+    email: email.value,
+    mobile: mobile.value,
+    gradeLevel: gradeLevel.value,
+    roleType: document.querySelector('input[name="roleType"]:checked').value,
+    club: club.value,
+    reason: reason.value,
+    dateSubmitted: new Date().toLocaleString()
+  };
+
+  let signUps = JSON.parse(localStorage.getItem("clubSignUps")) || [];
+  signUps.push(signUp);
+  localStorage.setItem("clubSignUps", JSON.stringify(signUps));
+
+  alert("Application saved!");
+  form.reset();
+};
+
+function markIfBlank(el){
+  el.classList.toggle("req", !el.value.trim());
+}
+</script>
 </body>
 </html>

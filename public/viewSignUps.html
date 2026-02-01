@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Ups</title>
+<title>View Sign-Ups</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td{
+            border: 1px solid #333;
+            padding: 6px;
+            text-align: left;
+        }
+        th{ 
+            background: #eee; 
+        }
+        .info{ 
+            margin-top: 10px; 
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Club Sign-Ups</h2>
+
+    <label>Filter by Club:
+        <select id="clubFilter">
+            <option value="MUSIC">Music</option>
+            <option value="VLBL">Volleyball</option>
+            <option value="GLEE">Glee</option>
+            <option value="PHOTO">Photography</option>
+            <option value="STEM">STEM</option>
+        </select>
+    </label>
+
+    <div id="output"></div>
+    <p class="info" id="total"></p>
+
+    <a href="../public/Q3_2GRubidiumTagle.html">Go back to Applications</a>
+
+    <script>
+        const output = document.getElementById("output");
+const total = document.getElementById("total");
+const filter = document.getElementById("clubFilter");
+
+const signUps = JSON.parse(localStorage.getItem("clubSignUps"));
+
+function renderTable(data){
+  if (!data || data.length === 0){
+    output.innerHTML = "<p>No sign-ups available.</p>";
+    total.textContent = "";
+    return;
+  }
+
+  let html = `<table>
+    <tr>
+      <th>Name</th>
+      <th>ID</th>
+      <th>Club</th>
+      <th>Grade</th>
+      <th>Role</th>
+      <th>Email</th>
+    </tr>`;
+
+  data.forEach(s => {
+    html += `<tr>
+      <td>${s.fullName}</td>
+      <td>${s.studentId}</td>
+      <td>${s.club}</td>
+      <td>${s.gradeLevel}</td>
+      <td>${s.roleType}</td>
+      <td>${s.email}</td>
+    </tr>`;
+  });
+
+  html += `</table>`;
+  output.innerHTML = html;
+  total.textContent = `Total Sign-Ups: ${data.length}`;
+}
+
+filter.onchange = function(){
+  if (!signUps) return;
+  const club = this.value;
+  const filtered = club === "ALL"
+    ? signUps
+    : signUps.filter(s => s.club === club);
+  renderTable(filtered);
+};
+
+renderTable(signUps);
+    </script>
+</body>
+</html>
+
